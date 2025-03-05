@@ -69,12 +69,20 @@ console.log(longest(strArr))
 console.log(moreCharsThan(strArr, 4))
 printNumsFrom(20)
 
-const data = [{ id: "42", name: "Bruce", occupation: "Knight", age: "41" },
+const people = [{ id: "42", name: "Bruce", occupation: "Knight", age: "41" },
   { id: "48", name: "Barry", occupation: "Runner", age: "25" },
   { id: "57", name: "Bob", occupation: "Fry Cook", age: "19" },
   { id: "63", name: "Blaine", occupation: "Quiz Master", age: "58" },
   { id: "7", name: "Bilbo", occupation: "None", age: "111" }]
 
-data.sort((objA, objB) => objA.age - objB.age)
+// Sort the array by age.
+people.sort((personA, personB) => personA.age - personB.age)
+console.log(people)
+// Filter the array to remove entries with an age greater than 50.
+const overAge50 = people.filter((personA => personA.age > 50) )
+// Map the array to change the “occupation” key to “job” and increment every age by 1.
+// const oneYearLater = people.map(())
+// Use the reduce method to calculate the sum of the ages.
+// Then use the result to calculate the average age.
 
-console.log(data)
+console.log(overAge50)
