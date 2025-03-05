@@ -88,7 +88,11 @@ const oneYearLater = people.map(person => {
   return person
 })
 // Use the reduce method to calculate the sum of the ages.
+let sumOfAges = people.reduce((acc, person) => acc + person.age, 0)
 // Then use the result to calculate the average age.
+let avgAge = sumOfAges/people.length
 
 console.log(overAge50)
 console.log(oneYearLater)
+console.log(sumOfAges)
+console.log(avgAge)
