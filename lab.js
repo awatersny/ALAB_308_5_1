@@ -75,3 +75,6 @@ const data = [{ id: "42", name: "Bruce", occupation: "Knight", age: "41" },
   { id: "63", name: "Blaine", occupation: "Quiz Master", age: "58" },
   { id: "7", name: "Bilbo", occupation: "None", age: "111" }]
 
+data.sort((objA, objB) => objA.age - objB.age)
+
+console.log(data)
