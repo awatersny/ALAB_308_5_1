@@ -43,7 +43,7 @@ function reverseString5(str) {
 // Variation of https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce?utm_medium=firefox-desktop&utm_source=firefox-suggest&utm_campaign=firefox-mdn-web-docs-suggestion-experiment&utm_content=treatment reduce review
 let arrSum = nums => nums.reduce((acc, num) => acc + num)
 // Take an array of numbers and return the average.
-let arrAvg = nums => nums.reduce((acc, num) => acc * num)/nums.length
+let arrAvg = nums => nums.reduce((acc, num) => acc + num)/nums.length
 // Take an array of strings and return the longest string.
 let longest = strs => strs.reduce((acc, str) => acc.length < str.length ? str : acc)
 // Take an array of strings, and a number and return an array of the strings that are longer than the given number. 
@@ -77,7 +77,7 @@ const people = [{ id: "42", name: "Bruce", occupation: "Knight", age: "41" },
 
 // Sort the array by age.
 people.sort((personA, personB) => personA.age - personB.age)
-// console.log(people)
+console.log(people)
 // Filter the array to remove entries with an age greater than 50.
 const overAge50 = people.filter((personA => personA.age > 50) )
 // Map the array to change the “occupation” key to “job” and increment every age by 1.
@@ -90,5 +90,5 @@ const oneYearLater = people.map(person => {
 // Use the reduce method to calculate the sum of the ages.
 // Then use the result to calculate the average age.
 
-// console.log(overAge50)
+console.log(overAge50)
 console.log(oneYearLater)
