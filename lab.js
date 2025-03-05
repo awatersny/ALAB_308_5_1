@@ -47,12 +47,14 @@ let arrAvg = nums => nums.reduce((acc, num) => acc * num)/nums.length
 // Take an array of strings and return the longest string.
 let longest = strs => strs.reduce((acc, str) => acc.length < str.length ? str : acc)
 // Take an array of strings, and a number and return an array of the strings that are longer than the given number. 
+let moreCharsThan = (strs, len) => strs.filter(str => str.length > len)
 // For example, stringsLongerThan(['say', 'hello', 'in', 'the', 'morning'], 3); would return ["hello", "morning"].
 // Take a number, n, and print every number between 1 and n without using loops. Use recursion.
 
 const numArr = [1, 2, 3, 4]
-const strArr = ['The', 'quick', 'brown', 'fox','jumped', 'over', 'the', 'lazy', 'dog']
+const strArr = ['The', 'quick', 'brown', 'fox', 'jumped', 'over', 'the', 'lazy', 'dog']
 
 console.log(arrSum(numArr))
 console.log(arrAvg(numArr))
 console.log(longest(strArr))
+console.log(moreCharsThan(strArr, 4))
