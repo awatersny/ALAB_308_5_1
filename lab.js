@@ -50,6 +50,15 @@ let longest = strs => strs.reduce((acc, str) => acc.length < str.length ? str : 
 let moreCharsThan = (strs, len) => strs.filter(str => str.length > len)
 // For example, stringsLongerThan(['say', 'hello', 'in', 'the', 'morning'], 3); would return ["hello", "morning"].
 // Take a number, n, and print every number between 1 and n without using loops. Use recursion.
+function printNumsFrom(n) {
+  // Base/edge case
+  if (n < 1) {
+    return
+  }
+  console.log(n)
+  printNumsFrom(n-1)
+}
+
 
 const numArr = [1, 2, 3, 4]
 const strArr = ['The', 'quick', 'brown', 'fox', 'jumped', 'over', 'the', 'lazy', 'dog']
@@ -58,3 +67,4 @@ console.log(arrSum(numArr))
 console.log(arrAvg(numArr))
 console.log(longest(strArr))
 console.log(moreCharsThan(strArr, 4))
+printNumsFrom(20)
