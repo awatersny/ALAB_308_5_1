@@ -41,13 +41,18 @@ function reverseString5(str) {
 
 // Take an array of numbers and return the sum.
 // Variation of https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce?utm_medium=firefox-desktop&utm_source=firefox-suggest&utm_campaign=firefox-mdn-web-docs-suggestion-experiment&utm_content=treatment reduce review
-let arrSum = arr => arr.reduce((acc, elt) => acc + elt)
+let arrSum = nums => nums.reduce((acc, num) => acc + num)
 // Take an array of numbers and return the average.
-let arrAvg = arr => arr.reduce((acc, elt) => acc * elt)/arr.length
+let arrAvg = nums => nums.reduce((acc, num) => acc * num)/nums.length
 // Take an array of strings and return the longest string.
+let longest = strs => strs.reduce((acc, str) => acc.length < str.length ? str : acc)
 // Take an array of strings, and a number and return an array of the strings that are longer than the given number. 
 // For example, stringsLongerThan(['say', 'hello', 'in', 'the', 'morning'], 3); would return ["hello", "morning"].
 // Take a number, n, and print every number between 1 and n without using loops. Use recursion.
 
-console.log(arrSum([1, 2, 3, 4]))
-console.log(arrAvg([1, 2, 3, 4]))
+const numArr = [1, 2, 3, 4]
+const strArr = ['The', 'quick', 'brown', 'fox','jumped', 'over', 'the', 'lazy', 'dog']
+
+console.log(arrSum(numArr))
+console.log(arrAvg(numArr))
+console.log(longest(strArr))
