@@ -77,12 +77,18 @@ const people = [{ id: "42", name: "Bruce", occupation: "Knight", age: "41" },
 
 // Sort the array by age.
 people.sort((personA, personB) => personA.age - personB.age)
-console.log(people)
+// console.log(people)
 // Filter the array to remove entries with an age greater than 50.
 const overAge50 = people.filter((personA => personA.age > 50) )
 // Map the array to change the “occupation” key to “job” and increment every age by 1.
-// const oneYearLater = people.map(())
+const oneYearLater = people.map(person => {
+  person.job = person.occupation
+  delete person.occupation
+  person.age++
+  return person
+})
 // Use the reduce method to calculate the sum of the ages.
 // Then use the result to calculate the average age.
 
-console.log(overAge50)
+// console.log(overAge50)
+console.log(oneYearLater)
