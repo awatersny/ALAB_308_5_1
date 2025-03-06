@@ -80,19 +80,42 @@ people.sort((personA, personB) => personA.age - personB.age)
 console.log(people)
 // Filter the array to remove entries with an age greater than 50.
 const overAge50 = people.filter((personA => personA.age > 50) )
+console.log(overAge50)
 // Map the array to change the “occupation” key to “job” and increment every age by 1.
-const oneYearLater = people.map(person => {
+people.map(person => {
   person.job = person.occupation
   delete person.occupation
-  person.age++
-  return person
+  person.age = parseInt(person.age) + 1
 })
+console.log(people)
 // Use the reduce method to calculate the sum of the ages.
 let sumOfAges = people.reduce((acc, person) => acc + person.age, 0)
+console.log(sumOfAges)
 // Then use the result to calculate the average age.
 let avgAge = sumOfAges/people.length
-
-console.log(overAge50)
-console.log(oneYearLater)
-console.log(sumOfAges)
 console.log(avgAge)
+
+// Take an object and increment its age field.
+const incrementAge = function(obj) {
+  obj.age++
+}
+people.map(incrementAge)
+console.log(people)
+// Take an object, make a copy, and increment the age field of the copy. Return the copy.
+const incrementAgeAndCopy = function(obj) {
+  const cpyObj = {}
+  for(key in obj) {
+    cpyObj[key] = obj[key]
+  }
+  cpyObj.age++
+  return cpyObj
+}
+const peopleNextYear = people.map(incrementAgeAndCopy)
+console.log(peopleNextYear)
+
+// Sanity check to make sure I have a deep copy
+people[0].age = 19
+console.log(peopleNextYear)
+// For each of the functions above, if the object does not yet contain an age field, create one and set it to 0. Also, add (or modify, as appropriate) an updated_at field that stores a Date object with the current time.
+
+// Thought experiment: since the Date object is an object, what would happen if we modified it in the copy of the object created in the second function using setTime() or another method? How could we circumvent potentially undesired behavior?
