@@ -97,17 +97,22 @@ console.log(avgAge)
 
 // Take an object and increment its age field.
 const incrementAge = function(obj) {
-  obj.age++
+  if (obj.age || obj.age === 0){
+    obj.age++
+  } else {
+    obj.age = 0
+  }
 }
+console.log("\npeople before incrementAge\n", people)
 people.map(incrementAge)
-console.log(people)
+console.log("\npeople after incrementAge\n", people)
 // Take an object, make a copy, and increment the age field of the copy. Return the copy.
 const incrementAgeAndCopy = function(obj) {
   const cpyObj = {}
   for(key in obj) {
     cpyObj[key] = obj[key]
   }
-  cpyObj.age++
+  incrementAge(cpyObj)
   return cpyObj
 }
 const peopleNextYear = people.map(incrementAgeAndCopy)
@@ -115,6 +120,7 @@ console.log(peopleNextYear)
 
 // Sanity check to make sure I have a deep copy
 people[0].age = 19
+console.log("\nSanity check\n", people)
 console.log(peopleNextYear)
 // For each of the functions above, if the object does not yet contain an age field, create one and set it to 0. Also, add (or modify, as appropriate) an updated_at field that stores a Date object with the current time.
 
